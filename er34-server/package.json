@@ -1,0 +1,20 @@
+{
+  "name": "er34",
+  "version": "1.0.0",
+  "description": "Easy 2-4 key r34 browsing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node index"
+  },
+  "keywords": [],
+  "author": "littletsu",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "cheerio": "^1.0.0-rc.10",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  }
+}
