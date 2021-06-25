@@ -2,10 +2,10 @@
 ### This project is in WIP, there might be some bad code, for now you can only load one page, some images might not load correctly and videos are not supported yet.
 Easy one hand booru (mainly rule34.xxx) browsing app made with React & Express
 # controls
-z - Go back one image
-x - Go forward one image
-c - Next page (unimplemented)
-v - Last page (unimplemented)
+z - Go back one image<br>
+x - Go forward one image<br>
+c - Next page (unimplemented)<br>
+v - Last page (unimplemented)<br>
 # build
 Start server:
 ```
