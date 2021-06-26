@@ -3,6 +3,8 @@ import { API_ENDPOINT, BOORU } from '../config.json';
 
 import Image from './Image';
 
+const isImage = file => file.endsWith('jpeg') || file.endsWith('png') || file.endsWith('jpg') 
+
 export default class ImageList extends Component {
 
     state = {
@@ -39,7 +41,7 @@ export default class ImageList extends Component {
     render() {
         return (
             <div>
-                {this.state.images.map((fimg, i) => <a href={`${BOORU}/${fimg.link}`}><Image full={fimg.full} key={i} index={i} imageList={this} style={fimg.style !== "" ? {border: "3px solid #0000ff"} : {}} alt={fimg.tags} src={fimg.thumbnail}/></a>)}
+                {this.state.images.map((fimg, i) => <a href={`${BOORU}/index.php?page=post&s=view&id=${fimg.id}`}><Image full={`${API_ENDPOINT}/image?url=${fimg.sample_url}`} key={i} index={i} imageList={this} style={isImage(fimg.image) ? {} : {border: "3px solid #0000ff"}} alt={fimg.tags} src={fimg.preview_url}/></a>)}
             </div>
         )
     }
