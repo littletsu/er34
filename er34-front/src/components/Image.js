@@ -19,10 +19,10 @@ export default class Image extends Component {
 
     render() {
         
-        let { style, src, alt, full, imageList, index } = this.props;
-        console.log(this.props)
+        let { style, src, alt, full, imageList, index} = this.props;
+        //console.log(this.props)
         return (
-            <img ref={this.myRef} src={imageList.state.iSelected === index ? full : src} style={style} alt={alt}/>
+            <img key={index+1} ref={this.myRef} src={imageList.state.iSelected === index ? full : src} style={style} alt={alt}/>
             )
     }
 

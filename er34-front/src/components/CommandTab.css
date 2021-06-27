@@ -1,0 +1,22 @@
+div.command-tab {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    color: black;
+    font-family: "Lucida Console";
+    padding: 0.5em;
+    background-color: white;
+    opacity: 95%;
+}
+
+.hide {
+    opacity: 0 !important;
+}
+
+input {
+    border: 0;
+    width: 100%
+}
+input:focus {
+    outline: 0;
+}

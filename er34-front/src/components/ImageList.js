@@ -14,8 +14,9 @@ export default class ImageList extends Component {
 
     async componentDidMount() {
         this.fetchThumbnails("")
-        window.addEventListener('keydown', (event) => {
-            console.log(event, this.state.iSelected)
+        window.addEventListener('keydown', event => {
+            //console.log(event, this.state.iSelected)
+            
             if(event.key === "z" && this.state.iSelected !== 0) {
                 
                 this.setState({
@@ -36,12 +37,13 @@ export default class ImageList extends Component {
         this.setState({
             images: json
         })
+        console.log(json);
     }
 
     render() {
         return (
             <div>
-                {this.state.images.map((fimg, i) => <a href={`${BOORU}/index.php?page=post&s=view&id=${fimg.id}`}><Image full={`${API_ENDPOINT}/image?url=${fimg.sample_url}`} key={i} index={i} imageList={this} style={isImage(fimg.image) ? {} : {border: "3px solid #0000ff"}} alt={fimg.tags} src={fimg.preview_url}/></a>)}
+                {this.state.images.map((fimg, i) => <a key={i} href={`${BOORU}/index.php?page=post&s=view&id=${fimg.id}`}><Image full={`${API_ENDPOINT}/image?url=${fimg.sample_url}`} key={i+1} index={i} imageList={this} style={isImage(fimg.image) ? {} : {border: "3px solid #0000ff"}} alt={fimg.tags} src={fimg.preview_url}/></a>)}
             </div>
         )
     }
