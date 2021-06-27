@@ -10,8 +10,8 @@ export default class Image extends Component {
         super(props)
         this.myRef = React.createRef()  
     }
-    
-    componentDidUpdate() {
+
+    focusOnLoad = () => {
         if(this.props.imageList.state.iSelected === this.props.index) {
             this.executeScroll();
         }
@@ -22,7 +22,7 @@ export default class Image extends Component {
         let { style, src, alt, full, imageList, index} = this.props;
         //console.log(this.props)
         return (
-            <img key={index+1} ref={this.myRef} src={imageList.state.iSelected === index ? full : src} style={style} alt={alt}/>
+            <img key={index+1} onLoad={this.focusOnLoad} ref={this.myRef} src={imageList.state.iSelected === index ? full : src} style={style} alt={alt}/>
             )
     }
 
