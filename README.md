@@ -6,6 +6,7 @@ z - Go back one image<br>
 x - Go forward one image<br>
 c - Next page (unimplemented)<br>
 v - Last page (unimplemented)<br>
+b - Open command tab<br>
 # build
 Start server:
 ```
