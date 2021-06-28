@@ -7,6 +7,7 @@ x - Go forward one image<br>
 c - Next page (unimplemented)<br>
 v - Last page (unimplemented)<br>
 b - Open command tab<br>
+left control/right control - Confirm command<br>
 # build
 Start server:
 ```

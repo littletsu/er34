@@ -20,7 +20,9 @@ export default class CommandTab extends Component {
     processCommand = command => {
         let processedCommand = Commands.filter(defCmds => command.toLowerCase().startsWith(defCmds.chars + " ") || command.toLowerCase() === defCmds.chars)[0];
         if(processedCommand) {
-            alert(processedCommand.description)
+            let args = command.split(' ');
+            args.shift();
+            processedCommand.execute(this, args, processedCommand);
         }
         
     }
@@ -33,6 +35,9 @@ export default class CommandTab extends Component {
                         this.setState({
                             disabled: false
                         })
+                        this.props.imageList.setState({
+                            commandTabDisabled: false
+                        })
                         this.myRef.current.children[0].focus();
                         // very hacky but works
                         setTimeout(() => this.myRef.current.children[0].value = this.myRef.current.children[0].value.slice(0, -1));
@@ -40,13 +45,16 @@ export default class CommandTab extends Component {
                     
                     
                     break; 
-                case "enter":
+                case "control":
                     if(!this.state.disabled) {
                         this.processCommand(this.myRef.current.children[0].value);
                         this.myRef.current.children[0].blur();
                         this.myRef.current.children[0].value = "";
                         this.setState({
                             disabled: true
+                        })
+                        this.props.imageList.setState({
+                            commandTabDisabled: true
                         })
                     }
                     

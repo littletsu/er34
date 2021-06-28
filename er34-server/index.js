@@ -10,7 +10,8 @@ app.use(cors());
 
 app.get('/images', (req, res) => {
     logger.debug(req.query.tag);
-    fetch(`${BOORU}/index.php?page=dapi&s=post&q=index&json=1&tags=${req.query.tag}`).then(res => res.json()).then(json => {
+    fetch(`${BOORU}/index.php?page=dapi&s=post&q=index&json=1&tags=${req.query.tag}`, {cache: "no-cache"}).then(res => res.json()).then(json => {
+        
         res.send(json);
     })
     
